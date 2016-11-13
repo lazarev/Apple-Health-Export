@@ -12,6 +12,10 @@
 		BBA076DB1DD798C5004F0D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA076D91DD798C5004F0D3A /* Main.storyboard */; };
 		BBA076DD1DD798C5004F0D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA076DC1DD798C5004F0D3A /* Assets.xcassets */; };
 		BBA076E01DD798C5004F0D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA076DE1DD798C5004F0D3A /* LaunchScreen.storyboard */; };
+		BBA076EA1DD79974004F0D3A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA076E91DD79974004F0D3A /* HealthKit.framework */; };
+		BBA076EC1DD7A2F3004F0D3A /* TypesToImport.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBA076EB1DD7A2F3004F0D3A /* TypesToImport.plist */; };
+		BBF063A31DD8E1EA004523D8 /* HealthSaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF063A21DD8E1E9004523D8 /* HealthSaveOperation.swift */; };
+		BBF063A51DD8ED8F004523D8 /* RequestPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF063A41DD8ED8E004523D8 /* RequestPermissions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,11 @@
 		BBA076DC1DD798C5004F0D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBA076DF1DD798C5004F0D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBA076E11DD798C5004F0D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA076E71DD79974004F0D3A /* Apple Health Export.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Apple Health Export.entitlements"; sourceTree = "<group>"; };
+		BBA076E91DD79974004F0D3A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		BBA076EB1DD7A2F3004F0D3A /* TypesToImport.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TypesToImport.plist; sourceTree = "<group>"; };
+		BBF063A21DD8E1E9004523D8 /* HealthSaveOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthSaveOperation.swift; sourceTree = "<group>"; };
+		BBF063A41DD8ED8E004523D8 /* RequestPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPermissions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA076EA1DD79974004F0D3A /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,7 @@
 			children = (
 				BBA076D41DD798C5004F0D3A /* Apple Health Export */,
 				BBA076D31DD798C5004F0D3A /* Products */,
+				BBA076E81DD79974004F0D3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,26 @@
 		BBA076D41DD798C5004F0D3A /* Apple Health Export */ = {
 			isa = PBXGroup;
 			children = (
+				BBA076E71DD79974004F0D3A /* Apple Health Export.entitlements */,
 				BBA076D51DD798C5004F0D3A /* AppDelegate.swift */,
 				BBA076D71DD798C5004F0D3A /* ViewController.swift */,
+				BBF063A21DD8E1E9004523D8 /* HealthSaveOperation.swift */,
+				BBF063A41DD8ED8E004523D8 /* RequestPermissions.swift */,
 				BBA076D91DD798C5004F0D3A /* Main.storyboard */,
 				BBA076DC1DD798C5004F0D3A /* Assets.xcassets */,
 				BBA076DE1DD798C5004F0D3A /* LaunchScreen.storyboard */,
 				BBA076E11DD798C5004F0D3A /* Info.plist */,
+				BBA076EB1DD7A2F3004F0D3A /* TypesToImport.plist */,
 			);
 			path = "Apple Health Export";
+			sourceTree = "<group>";
+		};
+		BBA076E81DD79974004F0D3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBA076E91DD79974004F0D3A /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +121,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = MMPP2NZU96;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,6 +154,7 @@
 			files = (
 				BBA076E01DD798C5004F0D3A /* LaunchScreen.storyboard in Resources */,
 				BBA076DD1DD798C5004F0D3A /* Assets.xcassets in Resources */,
+				BBA076EC1DD7A2F3004F0D3A /* TypesToImport.plist in Resources */,
 				BBA076DB1DD798C5004F0D3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF063A51DD8ED8F004523D8 /* RequestPermissions.swift in Sources */,
+				BBF063A31DD8E1EA004523D8 /* HealthSaveOperation.swift in Sources */,
 				BBA076D81DD798C5004F0D3A /* ViewController.swift in Sources */,
 				BBA076D61DD798C5004F0D3A /* AppDelegate.swift in Sources */,
 			);
@@ -259,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Apple Health Export/Apple Health Export.entitlements";
 				DEVELOPMENT_TEAM = MMPP2NZU96;
 				INFOPLIST_FILE = "Apple Health Export/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -272,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Apple Health Export/Apple Health Export.entitlements";
 				DEVELOPMENT_TEAM = MMPP2NZU96;
 				INFOPLIST_FILE = "Apple Health Export/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -300,6 +333,7 @@
 				BBA076E61DD798C5004F0D3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
