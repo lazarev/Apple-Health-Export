@@ -49,8 +49,7 @@ class HealthSaveOperation: Operation {
             return
         }
         self.willChangeValue(forKey: "isExecuting")
-
-        let predicate = NSPredicate(format: "%K == nil", arguments: HKPredicateKeyPathCorrelation)
+        let predicate = NSPredicate(format: "%K == nil", argumentArray: [HKPredicateKeyPathCorrelation])
         
         let query = HKAnchoredObjectQuery(type: self.type,
                                           predicate: predicate,

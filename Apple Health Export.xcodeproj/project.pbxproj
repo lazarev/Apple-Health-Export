@@ -14,6 +14,7 @@
 		BBA076E01DD798C5004F0D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA076DE1DD798C5004F0D3A /* LaunchScreen.storyboard */; };
 		BBA076EA1DD79974004F0D3A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA076E91DD79974004F0D3A /* HealthKit.framework */; };
 		BBA076EC1DD7A2F3004F0D3A /* TypesToImport.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBA076EB1DD7A2F3004F0D3A /* TypesToImport.plist */; };
+		BBB6DA691FC4004E00608741 /* TaskExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6DA681FC4004E00608741 /* TaskExecutionService.swift */; };
 		BBF063A31DD8E1EA004523D8 /* HealthSaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF063A21DD8E1E9004523D8 /* HealthSaveOperation.swift */; };
 		BBF063A51DD8ED8F004523D8 /* RequestPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF063A41DD8ED8E004523D8 /* RequestPermissions.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		BBA076E71DD79974004F0D3A /* Apple Health Export.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Apple Health Export.entitlements"; sourceTree = "<group>"; };
 		BBA076E91DD79974004F0D3A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		BBA076EB1DD7A2F3004F0D3A /* TypesToImport.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TypesToImport.plist; sourceTree = "<group>"; };
+		BBB6DA681FC4004E00608741 /* TaskExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskExecutionService.swift; sourceTree = "<group>"; };
 		BBF063A21DD8E1E9004523D8 /* HealthSaveOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthSaveOperation.swift; sourceTree = "<group>"; };
 		BBF063A41DD8ED8E004523D8 /* RequestPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPermissions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA076E71DD79974004F0D3A /* Apple Health Export.entitlements */,
+				BBB6DA681FC4004E00608741 /* TaskExecutionService.swift */,
 				BBA076D51DD798C5004F0D3A /* AppDelegate.swift */,
 				BBA076D71DD798C5004F0D3A /* ViewController.swift */,
 				BBF063A21DD8E1E9004523D8 /* HealthSaveOperation.swift */,
@@ -114,7 +117,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Andrew Lazarev";
 				TargetAttributes = {
 					BBA076D11DD798C5004F0D3A = {
@@ -122,6 +125,9 @@
 						DevelopmentTeam = MMPP2NZU96;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
@@ -169,6 +175,7 @@
 				BBF063A51DD8ED8F004523D8 /* RequestPermissions.swift in Sources */,
 				BBF063A31DD8E1EA004523D8 /* HealthSaveOperation.swift in Sources */,
 				BBA076D81DD798C5004F0D3A /* ViewController.swift in Sources */,
+				BBB6DA691FC4004E00608741 /* TaskExecutionService.swift in Sources */,
 				BBA076D61DD798C5004F0D3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,7 +211,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -212,7 +221,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -253,7 +267,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -261,7 +277,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
